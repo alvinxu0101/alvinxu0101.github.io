@@ -1,3 +1,4 @@
+http://www.alvinxu.club/2018/03/31/Debian固定IP地址总结/
 http://www.alvinxu.club/2018/02/01/Hbase数据导出到elasticsearch/
 http://www.alvinxu.club/2018/01/21/Ubuntu16-04安装QQ8-9-x系列/
 http://www.alvinxu.club/2018/01/20/怎样通过hexo-markdown-github发布文章/
