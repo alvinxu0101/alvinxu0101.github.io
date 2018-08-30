@@ -1,4 +1,4 @@
-http://www.alvinxu.club/2018/08/30/hexo博客换了系统或者换了电脑的迁移/
+http://www.alvinxu.club/2018/08/30/hexo博客换了系统或者电脑的迁移/
 http://www.alvinxu.club/2018/08/30/deepin关机或者重启死机/
 http://www.alvinxu.club/2018/07/21/斐波那契数列求第N项和/
 http://www.alvinxu.club/2018/04/08/Sublime-Text-3部分配置文件-后续一直更新/
