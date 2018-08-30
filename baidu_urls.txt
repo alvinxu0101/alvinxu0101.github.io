@@ -1,3 +1,5 @@
+http://www.alvinxu.club/2018/08/30/deepin重启或关机死机/
+http://www.alvinxu.club/2018/07/21/斐波那契数列求第N项和/
 http://www.alvinxu.club/2018/04/08/Sublime-Text-3部分配置文件-后续一直更新/
 http://www.alvinxu.club/2018/03/31/Debian固定IP地址总结/
 http://www.alvinxu.club/2018/02/01/Hbase数据导出到elasticsearch/
