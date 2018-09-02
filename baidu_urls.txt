@@ -1,3 +1,4 @@
+http://www.alvinxu.club/2018/09/02/IDEA无法登录github解决/
 http://www.alvinxu.club/2018/08/30/hexo博客换了系统或者电脑的迁移/
 http://www.alvinxu.club/2018/08/30/deepin关机或者重启死机/
 http://www.alvinxu.club/2018/07/21/斐波那契数列求第N项和/
