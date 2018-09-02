@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.alvinxu.club/about/index.html</loc>
+    
+    <lastmod>2018-09-02T08:03:29.796Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.alvinxu.club/2018/02/01/Hbase%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%88%B0elasticsearch/</loc>
     
     <lastmod>2018-09-02T08:00:23.777Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://www.alvinxu.club/2018/01/20/%E6%80%8E%E6%A0%B7%E9%80%9A%E8%BF%87hexo-markdown-github%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0/</loc>
     
     <lastmod>2018-01-21T06:12:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.alvinxu.club/about/index.html</loc>
-    
-    <lastmod>2018-01-20T16:15:45.000Z</lastmod>
     
   </url>
   
