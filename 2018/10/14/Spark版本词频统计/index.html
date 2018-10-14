@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPair将切分出来">
+<meta name="description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPair将切分出来">
 <meta name="keywords" content="Spark,词频统计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spark版本词频统计">
 <meta property="og:url" content="http://www.alvinxu.club/2018/10/14/Spark版本词频统计/index.html">
 <meta property="og:site_name" content="徐飞的个人博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPair将切分出来">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPair将切分出来">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-14T14:55:59.878Z">
+<meta property="og:updated_time" content="2018-10-14T14:57:06.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spark版本词频统计">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPair将切分出来">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPair将切分出来">
 
 
 
@@ -388,7 +388,7 @@
       
 
       
-        <p>&emsp;&emsp;在学习Spark的时候，想要通过Java语言写一个spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。<br>1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。<br>2、JavaSparkContext读取文件。<br>3、对读取到文件调用flatMap操作切割文本中的单词。<br>4、调用MapToPair将切分出来的单词形成键值对映射，以每个单词为Key。<br>5、调用reduceByKey以每个Key相同的单词进行相加。<br>6、最终结果保存到文件中。<br>&emsp;&emsp;代码如下所示：<br><em>注意：下面代码中的path我这里进行了xxx.txt代替，这儿在本案例中用的则是真实路径，在企业级项目中应当避免出现此种硬编码形式。</em></p>
+        <p>&emsp;&emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。<br>1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。<br>2、JavaSparkContext读取文件。<br>3、对读取到文件调用flatMap操作切割文本中的单词。<br>4、调用MapToPair将切分出来的单词形成键值对映射，以每个单词为Key。<br>5、调用reduceByKey以每个Key相同的单词进行相加。<br>6、最终结果保存到文件中。<br>&emsp;&emsp;代码如下所示：<br><em>注意：下面代码中的path我这里进行了xxx.txt代替，这儿在本案例中用的则是真实路径，在企业级项目中应当避免出现此种硬编码形式。</em></p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class JavaWorldCount &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SparkConf conf = new SparkConf().setAppName("WorldCOunt").setMaster("local[1]");</span><br><span class="line">        JavaSparkContext sc = new JavaSparkContext(conf);</span><br><span class="line">        String path = "xxx.txt";</span><br><span class="line">        JavaRDD&lt;String&gt; filePath = sc.textFile(path);</span><br><span class="line">        <span class="comment">/*flatMap切分单词*/</span></span><br><span class="line">        JavaRDD&lt;String&gt; worlds = filePath.flatMap((world) -&gt; &#123;</span><br><span class="line">            return Arrays.asList(world.split(","));</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">/*将前一步压扁后的单词转换为键值成对形式*/</span></span><br><span class="line">        JavaPairRDD&lt;String, Integer&gt; worldToKey = worlds.mapToPair((world) -&gt; &#123;</span><br><span class="line">            return new Tuple2&lt;&gt;(world, 1);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">/*以单词为Key，value相加求单词数*/</span></span><br><span class="line">        JavaPairRDD&lt;String, Integer&gt; worldCount = worldToKey.reduceByKey((x, y) -&gt; &#123;</span><br><span class="line">            return x + y;</span><br><span class="line">        &#125;);</span><br><span class="line">        worldCount.saveAsTextFile("output");</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
       
