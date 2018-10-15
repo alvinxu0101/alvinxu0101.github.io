@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPair将切分出来">
+<meta name="description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。 第一种写法：1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPa">
 <meta name="keywords" content="Spark,词频统计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spark版本词频统计">
 <meta property="og:url" content="http://www.alvinxu.club/2018/10/14/Spark版本词频统计/index.html">
 <meta property="og:site_name" content="徐飞的个人博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPair将切分出来">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。 第一种写法：1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-14T14:59:53.902Z">
+<meta property="og:updated_time" content="2018-10-15T16:21:07.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spark版本词频统计">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPair将切分出来">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。 第一种写法：1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。2、JavaSparkContext读取文件。3、对读取到文件调用flatMap操作切割文本中的单词。4、调用MapToPa">
 
 
 
@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  319
+                  517
                 </span>
               
 
@@ -367,7 +367,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -388,8 +388,12 @@
       
 
       
-        <p>&emsp;&emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。<br>1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。<br>2、JavaSparkContext读取文件。<br>3、对读取到文件调用flatMap操作切割文本中的单词。<br>4、调用MapToPair将切分出来的单词形成键值对映射，以每个单词为Key。<br>5、调用reduceByKey以每个Key相同的单词进行相加。<br>6、最终结果保存到文件中。<br>&emsp;&emsp;代码如下所示：<br><em>注意：下面代码中的path我这里进行了xxx.txt代替，这儿在本案例中用的则是真实路径，在企业级项目中应当避免出现此种硬编码形式。</em></p>
+        <p>&emsp;&emsp;在学习Spark的时候，想要通过Java语言写一个Spark版本的词频统计。于是乎，Java版本的Spark的词频统计出来了。</p>
+<p>第一种写法：<br>1、Spark编程的基本流程，SparkConf加载，JavaSparkContext中传入SparkConf。<br>2、JavaSparkContext读取文件。<br>3、对读取到文件调用flatMap操作切割文本中的单词。<br>4、调用MapToPair将切分出来的单词形成键值对映射，以每个单词为Key。<br>5、调用reduceByKey以每个Key相同的单词进行相加。<br>6、最终结果保存到文件中。<br>&emsp;&emsp;代码如下所示：<br><em>注意：下面代码中的path我这里进行了xxx.txt代替，这儿在本案例中用的则是真实路径，在企业级项目中应当避免出现此种硬编码形式。</em></p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class JavaWorldCount &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SparkConf conf = new SparkConf().setAppName("WorldCount").setMaster("local[1]");</span><br><span class="line">        JavaSparkContext sc = new JavaSparkContext(conf);</span><br><span class="line">        String path = "xxx.txt";</span><br><span class="line">        JavaRDD&lt;String&gt; filePath = sc.textFile(path);</span><br><span class="line">        <span class="comment">/*flatMap切分单词*/</span></span><br><span class="line">        JavaRDD&lt;String&gt; worlds = filePath.flatMap((world) -&gt; &#123;</span><br><span class="line">            return Arrays.asList(world.split(","));</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">/*将前一步压扁后的单词转换为键值成对形式*/</span></span><br><span class="line">        JavaPairRDD&lt;String, Integer&gt; worldToKey = worlds.mapToPair((world) -&gt; &#123;</span><br><span class="line">            return new Tuple2&lt;&gt;(world, 1);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">/*以单词为Key，value相加求单词数*/</span></span><br><span class="line">        JavaPairRDD&lt;String, Integer&gt; worldCount = worldToKey.reduceByKey((x, y) -&gt; &#123;</span><br><span class="line">            return x + y;</span><br><span class="line">        &#125;);</span><br><span class="line">        worldCount.saveAsTextFile("output");</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>第二种写法：<br>&emsp;&emsp;在阅读Spark快速数据分析书本的时候发现，可以在flatMap切分成单词后直接使用countByValue()求每个单词出现的次数，调用countByValue()返回的是一个Map函数，这之后就是对Map结果进行遍历输出端的事情了，代码如下：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class JavaWorldCount2 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SparkConf conf = new SparkConf().setAppName("WorldCount").setMaster("local[1]");</span><br><span class="line">        JavaSparkContext sc = new JavaSparkContext(conf);</span><br><span class="line">        String path = xxx.txt<span class="string">";</span></span><br><span class="line"><span class="string">        JavaRDD&lt;String&gt; filePath = sc.textFile(path);</span></span><br><span class="line"><span class="string">        JavaRDD&lt;String&gt; worlds = filePath.flatMap(world -&gt; &#123;</span></span><br><span class="line"><span class="string">            return Arrays.asList(world.split("</span>,<span class="string">"));</span></span><br><span class="line"><span class="string">        &#125;);</span></span><br><span class="line"><span class="string">        Map&lt;String, Long&gt; worldCount = worlds.countByValue();</span></span><br><span class="line"><span class="string">        Set&lt;Map.Entry&lt;String, Long&gt;&gt; entries = worldCount.entrySet();</span></span><br><span class="line"><span class="string">        Iterator&lt;Map.Entry&lt;String, Long&gt;&gt; iterator = entries.iterator();</span></span><br><span class="line"><span class="string">        while (iterator.hasNext()) &#123;</span></span><br><span class="line"><span class="string">            Map.Entry&lt;String, Long&gt; next = iterator.next();</span></span><br><span class="line"><span class="string">            String key = next.getKey();</span></span><br><span class="line"><span class="string">            Long value = next.getValue();</span></span><br><span class="line">            System.out.println("key:" + key + "; value:" + value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -619,7 +623,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.8k</span>
+    <span title="Site words total count">3.0k</span>
   
 <!--
 
@@ -637,7 +641,7 @@
 
 
 <div class="theme-info">
-  <span class="post-count">博客全站共2.8k字</span>
+  <span class="post-count">博客全站共3.0k字</span>
 </div>
 
 <script>
