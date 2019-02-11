@@ -1,3 +1,4 @@
+http://www.finnxu.cn/2019/02/11/解决-E-无法获得锁-var-lib-dpkg-lock-open-11-资源暂时不可用/
 http://www.finnxu.cn/2018/10/14/Spark版本词频统计/
 http://www.finnxu.cn/2018/09/02/IDEA无法登录github解决/
 http://www.finnxu.cn/2018/08/30/hexo博客换了系统或者电脑的迁移/
